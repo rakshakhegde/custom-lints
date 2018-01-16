@@ -3,7 +3,6 @@ apply plugin: 'kotlin'
 
 dependencies {
 	testCompile "junit:junit:4.12"
-	compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
 	compileOnly "com.android.tools.lint:lint-api:$lintVersion"
 	compileOnly "com.android.tools.lint:lint-checks:$lintVersion"
