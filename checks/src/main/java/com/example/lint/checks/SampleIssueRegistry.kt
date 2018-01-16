@@ -22,7 +22,7 @@ import com.android.tools.lint.client.api.IssueRegistry
  */
 class SampleIssueRegistry : IssueRegistry() {
 
-	override val api = com.android.tools.lint.detector.api.CURRENT_API
+	override val api = 0
 
 	override val issues = listOf(
 			RxUsedEnforcer.ISSUE,
