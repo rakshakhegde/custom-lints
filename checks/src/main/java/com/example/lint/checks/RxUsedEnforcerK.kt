@@ -5,7 +5,7 @@ import com.android.tools.lint.detector.api.*
 import com.android.tools.lint.detector.api.Detector.UastScanner
 import org.jetbrains.uast.*
 
-class RxUsedEnforcer : Detector(), UastScanner {
+class RxUsedEnforcerK : Detector(), UastScanner {
 
 	override fun getApplicableUastTypes() =
 			listOf(UCallExpression::class.java)
@@ -44,13 +44,13 @@ class RxUsedEnforcer : Detector(), UastScanner {
 		)
 
 		internal val ISSUE = Issue.create(
-				id = RxUsedEnforcer::class.java.simpleName,
+				id = RxUsedEnforcerK::class.java.simpleName,
 				briefDescription = "Make sure function returning Rx type is being used (typically `subscribe()`)",
 				explanation = "Make sure function returning Rx type is being used (typically `subscribe()`)",
 				category = Category.CORRECTNESS,
 				priority = 10,
 				severity = Severity.ERROR,
-				implementation = Implementation(RxUsedEnforcer::class.java, Scope.JAVA_FILE_SCOPE)
+				implementation = Implementation(RxUsedEnforcerK::class.java, Scope.JAVA_FILE_SCOPE)
 		)
 	}
 }

@@ -28,10 +28,10 @@ class RxUsedEnforcerTest {
         }
 
         """))
-				.issues(RxUsedEnforcer.ISSUE)
+				.issues(RxUsedEnforcerJ.ISSUE)
 				.run()
 				.expect("""
-src/is/uncommon/checks/TestClazz.java:14: Error: Make use of the returned Rx type [RxUsedEnforcer]
+src/is/uncommon/checks/TestClazz.java:14: Error: Make use of the returned Rx type [RxUsedEnforcerJ]
             rxReturningFunction();
             ~~~~~~~~~~~~~~~~~~~
 1 errors, 0 warnings
