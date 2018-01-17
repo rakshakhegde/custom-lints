@@ -30,7 +30,7 @@ public class RxUsedEnforcerJ extends Detector implements UastScanner {
 	static final Issue ISSUE = Issue.create(
 			RxUsedEnforcerJ.class.getSimpleName(),
 			"Make sure function returning Rx type is being used (typically `subscribe()`)",
-			"",
+			"Make sure function returning Rx type is being used (typically `subscribe()`)",
 			Category.CORRECTNESS,
 			10,
 			Severity.ERROR,
