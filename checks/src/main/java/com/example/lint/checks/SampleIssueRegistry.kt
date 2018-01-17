@@ -25,7 +25,7 @@ class SampleIssueRegistry : IssueRegistry() {
 	override val api = com.android.tools.lint.detector.api.CURRENT_API
 
 	override val issues = listOf(
-			RxUsedEnforcerK.ISSUE,
+			RxUsedEnforcerJ.ISSUE,
 			ImplementsSerializableDetector.ISSUE
 	)
 }
