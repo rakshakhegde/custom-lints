@@ -10,9 +10,9 @@ import com.android.tools.lint.detector.api.JavaContext;
 import com.android.tools.lint.detector.api.Scope;
 import com.android.tools.lint.detector.api.Severity;
 import com.intellij.psi.PsiType;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Stream;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.uast.UCallExpression;
 import org.jetbrains.uast.UElement;
@@ -36,7 +36,7 @@ public class RxUsedEnforcerJ extends Detector implements UastScanner {
 			Severity.ERROR,
 			new Implementation(RxUsedEnforcerJ.class, Scope.JAVA_FILE_SCOPE)
 	);
-	private static List<String> RX_PRIMITIVE_CANONICAL_NAMES = Arrays.asList(
+	private static Stream<String> RX_PRIMITIVE_CANONICAL_NAMES = Stream.of(
 			"io.reactivex.Observable",
 			"io.reactivex.Single",
 			"io.reactivex.Completable",
@@ -64,7 +64,7 @@ public class RxUsedEnforcerJ extends Detector implements UastScanner {
 					return;
 				}
 
-				boolean returnTypeStartsWithAnyRx = RX_PRIMITIVE_CANONICAL_NAMES.stream()
+				boolean returnTypeStartsWithAnyRx = RX_PRIMITIVE_CANONICAL_NAMES
 						.anyMatch(rxClassName -> returnType.getCanonicalText().startsWith(rxClassName));
 
 				boolean valid = returnTypeStartsWithAnyRx &&
