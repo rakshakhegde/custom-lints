@@ -72,9 +72,6 @@ public class RxUsedEnforcerJ extends Detector implements UastScanner {
 						!(node.getUastParent() instanceof ULocalVariable) &&
 						!(node.getUastParent() instanceof UReturnExpression);
 
-				System.out.println(
-						"reporting from visitCallExpression => " + node + " => " + node.getUastParent().getClass().getCanonicalName() + " => " + returnType
-								.getCanonicalText() + " => valid=" + valid);
 				if (valid) {
 					context.report(ISSUE,
 							context.getCallLocation(node, false, false),
